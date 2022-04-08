@@ -1,4 +1,4 @@
-package hu.bme.mit.spaceship;
+ package hu.bme.mit.spaceship;
 
 /**
 * A simple spaceship with two proton torpedo stores and four lasers
@@ -85,8 +85,8 @@ public class GT4500 implements SpaceShip {
         if (! primaryTorpedoStore.isEmpty()) {
           firingSuccess = primaryTorpedoStore.fire(1);
           wasPrimaryFiredLast = true;
-          System.out("Text made on branch-B.");
-          System.out("This output was made in branch-A.");
+          //"Text made on branch-B."
+          //"This output was made in branch-A."
         }
 
         break;
