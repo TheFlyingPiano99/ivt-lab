@@ -143,6 +143,23 @@ public class GT4500Test {
   }
 
   @Test
+  public void fire_single_twice_primary_gets_empty() {
+    // Arrange
+    when(mockTSSecondary.isEmpty()).thenReturn(true);
+
+    // Act
+    boolean result1 = ship.fireTorpedo(FiringMode.SINGLE);
+    when(mockTSPrimary.isEmpty()).thenReturn(true);
+    boolean result2 = ship.fireTorpedo(FiringMode.SINGLE);
+
+    // Assert
+    assertEquals(true, result1);
+    assertEquals(false, result2);
+    verify(mockTSPrimary, times(1)).fire(1);
+    verify(mockTSSecondary, times(0)).fire(1);
+  }
+
+  @Test
   public void fire_all_twice() {
     // Arrange
 
