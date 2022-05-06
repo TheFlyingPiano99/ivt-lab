@@ -1,0 +1,30 @@
+GT4500.fireTorpedo() tests:
+---------------------------
+
+1.
+fire_single_twice_success
+    Init: Stubs return true
+    Act: Torpedos get fired in single mode twice.
+    Assert: First the primary, next the secondary store is fireing.
+
+2.
+fire_single_twice_first_failure
+    Act: Torpedos get fired in single mode twice.
+    Assert: First the primary store tries to fire unsuccessfully and returns false, the secondary will not fire.
+            Second time the secondary will fire.
+
+
+3.
+fire_single_twice_second_failure
+    Act: Torpedos get fired in single mode twice.
+    Assert: First the primary store fires successfully, the secondary will not fire, returns false.
+
+4.
+fire_single_twice_first_out_of_ammo
+    Act: Torpedos get fired in single mode twice.
+    Assert: First the primary store tries to fire, but out of ammo, the secondary will fire instead the first time. ???Second time no torpedo gets fired.???
+
+5.
+fire_all_twice
+    Act: Torpedos get fired in all mode twice.
+    Assert: Both times primary and secondary store fires.
